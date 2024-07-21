@@ -2,13 +2,13 @@ package com.example.oop.chapter1;
 
 import java.util.List;
 
-public class RestaurantChain {
+public class RestaurantChain implements Calculable {
 
-    private List<Store> stores;
+    private List<Calculable> stores;
 
     public long calculateRevenue() {
         long revenue = 0;
-        for (Store store : stores) {
+        for (Calculable store : stores) {
             revenue += store.calculateRevenue();
         }
         return revenue;
@@ -16,7 +16,7 @@ public class RestaurantChain {
 
     public long calculateProfit() {
         long income = 0;
-        for (Store store : stores) {
+        for (Calculable store : stores) {
             income += store.calculateProfit();
         }
         return income;
